@@ -15,6 +15,8 @@
 		FE77BB311F698E34002EB6AF /* WikiPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB301F698E34002EB6AF /* WikiPage.swift */; };
 		FE77BB331F698ECD002EB6AF /* WikiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB321F698ECD002EB6AF /* WikiData.swift */; };
 		FE77BB351F699053002EB6AF /* WikiAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB341F699053002EB6AF /* WikiAPIClient.swift */; };
+		FED977A41F69B21500F9BE29 /* PhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED977A31F69B21500F9BE29 /* PhotosViewController.swift */; };
+		FED977A71F69E0D100F9BE29 /* Gooroo Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = FED977A61F69E0D100F9BE29 /* Gooroo Logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		FE77BB301F698E34002EB6AF /* WikiPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPage.swift; sourceTree = "<group>"; };
 		FE77BB321F698ECD002EB6AF /* WikiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiData.swift; sourceTree = "<group>"; };
 		FE77BB341F699053002EB6AF /* WikiAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAPIClient.swift; sourceTree = "<group>"; };
+		FED977A31F69B21500F9BE29 /* PhotosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewController.swift; sourceTree = "<group>"; };
+		FED977A61F69E0D100F9BE29 /* Gooroo Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gooroo Logo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 		FE77BB1C1F6985F4002EB6AF /* WikiSearch */ = {
 			isa = PBXGroup;
 			children = (
+				FED977A61F69E0D100F9BE29 /* Gooroo Logo.png */,
+				FED977A31F69B21500F9BE29 /* PhotosViewController.swift */,
 				FE77BB1D1F6985F4002EB6AF /* AppDelegate.swift */,
 				FE77BB1F1F6985F4002EB6AF /* ViewController.swift */,
 				FE77BB321F698ECD002EB6AF /* WikiData.swift */,
@@ -140,6 +146,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FED977A71F69E0D100F9BE29 /* Gooroo Logo.png in Resources */,
 				FE77BB281F6985F4002EB6AF /* LaunchScreen.storyboard in Resources */,
 				FE77BB251F6985F4002EB6AF /* Assets.xcassets in Resources */,
 				FE77BB231F6985F4002EB6AF /* Main.storyboard in Resources */,
@@ -158,6 +165,7 @@
 				FE77BB311F698E34002EB6AF /* WikiPage.swift in Sources */,
 				FE77BB1E1F6985F4002EB6AF /* AppDelegate.swift in Sources */,
 				FE77BB331F698ECD002EB6AF /* WikiData.swift in Sources */,
+				FED977A41F69B21500F9BE29 /* PhotosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GB3732J7W2;
-				INFOPLIST_FILE = "Gooroo WikiSearch/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/WikiSearch/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lawrence-Herman.Gooroo-WikiSearch";
@@ -312,7 +320,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GB3732J7W2;
-				INFOPLIST_FILE = "Gooroo WikiSearch/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/WikiSearch/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lawrence-Herman.Gooroo-WikiSearch";

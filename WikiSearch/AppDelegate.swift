@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Gooroo WikiSearch
+//  WikiSearch
 //
 //  Created by Lawrence Herman on 9/13/17.
 //  Copyright © 2017 Lawrence Herman. All rights reserved.
