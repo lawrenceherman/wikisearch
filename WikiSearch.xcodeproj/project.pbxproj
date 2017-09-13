@@ -1,0 +1,349 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FE77BB1E1F6985F4002EB6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB1D1F6985F4002EB6AF /* AppDelegate.swift */; };
+		FE77BB201F6985F4002EB6AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB1F1F6985F4002EB6AF /* ViewController.swift */; };
+		FE77BB231F6985F4002EB6AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE77BB211F6985F4002EB6AF /* Main.storyboard */; };
+		FE77BB251F6985F4002EB6AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE77BB241F6985F4002EB6AF /* Assets.xcassets */; };
+		FE77BB281F6985F4002EB6AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE77BB261F6985F4002EB6AF /* LaunchScreen.storyboard */; };
+		FE77BB311F698E34002EB6AF /* WikiPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB301F698E34002EB6AF /* WikiPage.swift */; };
+		FE77BB331F698ECD002EB6AF /* WikiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB321F698ECD002EB6AF /* WikiData.swift */; };
+		FE77BB351F699053002EB6AF /* WikiAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB341F699053002EB6AF /* WikiAPIClient.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FE77BB1A1F6985F4002EB6AF /* Gooroo WikiSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gooroo WikiSearch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE77BB1D1F6985F4002EB6AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE77BB1F1F6985F4002EB6AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE77BB221F6985F4002EB6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FE77BB241F6985F4002EB6AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE77BB271F6985F4002EB6AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FE77BB291F6985F4002EB6AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE77BB301F698E34002EB6AF /* WikiPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPage.swift; sourceTree = "<group>"; };
+		FE77BB321F698ECD002EB6AF /* WikiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiData.swift; sourceTree = "<group>"; };
+		FE77BB341F699053002EB6AF /* WikiAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiAPIClient.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FE77BB171F6985F4002EB6AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FE77BB111F6985F4002EB6AF = {
+			isa = PBXGroup;
+			children = (
+				FE77BB1C1F6985F4002EB6AF /* WikiSearch */,
+				FE77BB1B1F6985F4002EB6AF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FE77BB1B1F6985F4002EB6AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FE77BB1A1F6985F4002EB6AF /* Gooroo WikiSearch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FE77BB1C1F6985F4002EB6AF /* WikiSearch */ = {
+			isa = PBXGroup;
+			children = (
+				FE77BB1D1F6985F4002EB6AF /* AppDelegate.swift */,
+				FE77BB1F1F6985F4002EB6AF /* ViewController.swift */,
+				FE77BB321F698ECD002EB6AF /* WikiData.swift */,
+				FE77BB341F699053002EB6AF /* WikiAPIClient.swift */,
+				FE77BB2F1F698DED002EB6AF /* Model */,
+				FE77BB211F6985F4002EB6AF /* Main.storyboard */,
+				FE77BB241F6985F4002EB6AF /* Assets.xcassets */,
+				FE77BB291F6985F4002EB6AF /* Info.plist */,
+				FE77BB261F6985F4002EB6AF /* LaunchScreen.storyboard */,
+			);
+			path = WikiSearch;
+			sourceTree = "<group>";
+		};
+		FE77BB2F1F698DED002EB6AF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE77BB301F698E34002EB6AF /* WikiPage.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FE77BB191F6985F4002EB6AF /* Gooroo WikiSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FE77BB2C1F6985F4002EB6AF /* Build configuration list for PBXNativeTarget "Gooroo WikiSearch" */;
+			buildPhases = (
+				FE77BB161F6985F4002EB6AF /* Sources */,
+				FE77BB171F6985F4002EB6AF /* Frameworks */,
+				FE77BB181F6985F4002EB6AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Gooroo WikiSearch";
+			productName = "Gooroo WikiSearch";
+			productReference = FE77BB1A1F6985F4002EB6AF /* Gooroo WikiSearch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FE77BB121F6985F4002EB6AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Lawrence Herman";
+				TargetAttributes = {
+					FE77BB191F6985F4002EB6AF = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FE77BB151F6985F4002EB6AF /* Build configuration list for PBXProject "WikiSearch" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FE77BB111F6985F4002EB6AF;
+			productRefGroup = FE77BB1B1F6985F4002EB6AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FE77BB191F6985F4002EB6AF /* Gooroo WikiSearch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FE77BB181F6985F4002EB6AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE77BB281F6985F4002EB6AF /* LaunchScreen.storyboard in Resources */,
+				FE77BB251F6985F4002EB6AF /* Assets.xcassets in Resources */,
+				FE77BB231F6985F4002EB6AF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FE77BB161F6985F4002EB6AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FE77BB351F699053002EB6AF /* WikiAPIClient.swift in Sources */,
+				FE77BB201F6985F4002EB6AF /* ViewController.swift in Sources */,
+				FE77BB311F698E34002EB6AF /* WikiPage.swift in Sources */,
+				FE77BB1E1F6985F4002EB6AF /* AppDelegate.swift in Sources */,
+				FE77BB331F698ECD002EB6AF /* WikiData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FE77BB211F6985F4002EB6AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE77BB221F6985F4002EB6AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FE77BB261F6985F4002EB6AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FE77BB271F6985F4002EB6AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FE77BB2A1F6985F4002EB6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FE77BB2B1F6985F4002EB6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FE77BB2D1F6985F4002EB6AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GB3732J7W2;
+				INFOPLIST_FILE = "Gooroo WikiSearch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lawrence-Herman.Gooroo-WikiSearch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FE77BB2E1F6985F4002EB6AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GB3732J7W2;
+				INFOPLIST_FILE = "Gooroo WikiSearch/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Lawrence-Herman.Gooroo-WikiSearch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FE77BB151F6985F4002EB6AF /* Build configuration list for PBXProject "WikiSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE77BB2A1F6985F4002EB6AF /* Debug */,
+				FE77BB2B1F6985F4002EB6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FE77BB2C1F6985F4002EB6AF /* Build configuration list for PBXNativeTarget "Gooroo WikiSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FE77BB2D1F6985F4002EB6AF /* Debug */,
+				FE77BB2E1F6985F4002EB6AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FE77BB121F6985F4002EB6AF /* Project object */;
+}
