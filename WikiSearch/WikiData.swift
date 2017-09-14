@@ -36,8 +36,13 @@ class WikiData {
         //        print("in pages loop")
         
         let item = WikiPage(page: p)
-        self.pagesArray.append(item)
-        print("pagescount' \(i)")
+        if item.sourceURL != nil {
+          self.pagesArray.append(item)
+          print("pagescount' \(i)")
+        
+        }
+        
+     
 
         i += 1
       }
