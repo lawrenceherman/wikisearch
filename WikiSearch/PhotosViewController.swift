@@ -8,33 +8,54 @@
 
 import UIKit
 
+//protocol TextCaptureDelegate: class {
+//  func textCapture(_ text: String)
+//}
+
 
 class PhotosViewController: UICollectionViewController {
   
   let data = WikiData.sharedInstance
-  
-  
   let reuseIdentifier = "WikiCell"
   //    let sectionInserts = UIEdgeInsetsMake(50.0, 20.0, 50.0, 20.0)
+  
+//  weak var textDelegate: TextCaptureDelegate?
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    data.getItemsFromAPI {
-      
-      //reload data on main async?
+  
 
-    }
+    
+ 
     
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = false
     
     // Register cell classes
-    self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//    self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     
     // Do any additional setup after loading the view.
+  }
+  
+  @IBAction func editingChanged(_ sender: UITextField) {
+  
+    data.textCapture = sender.text!
+    
+    data.getItemsFromAPI {
+      
+
+      
+      
+    }
+    
+    collectionView?.reloadData()
+    
+    
+    
+  
   }
   
   override func didReceiveMemoryWarning() {
@@ -96,21 +117,26 @@ extension PhotosViewController {
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
     // #warning Incomplete implementation, return the number of sections
-    return data.pagesArray.count
+    return 1
   }
   
   
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     // #warning Incomplete implementation, return the number of items
-    return 0
+    print("inside collectionView \(data.pagesArray.count)")
+
+    return data.pagesArray.count
   }
   
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
-    // Configure the cell
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WikiPhotoCell
+
+    let image = data.pagesArray[indexPath.row].image
+    cell.imageView.image = image
     
     return cell
   }
   
 }
+
+

@@ -12,41 +12,36 @@ import UIKit
 class WikiAPIClient {
   
   // possible alias
+ 
+
   
-  class func getPages(with completion: @escaping ([String: Any]) -> ()) {
+  class func getPages(text: String, with completion: @escaping ([String: Any]) -> ()) {
+    
+    
+   print(text)
     
     print("inside wikiClient get pages")
+  
     
-    let urlString = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=96&pilimit=50&generator=prefixsearch&gpssearch=Cat&gpslimit=50"
     
-    let url = URL(string: urlString)!
+    //    let urlString = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=96&pilimit=50&generator=prefixsearch&gpssearch=Cat&gpslimit=50"
     
-    print(url)
+    let urlString = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=96&pilimit=50&generator=prefixsearch&gpssearch=" + text + "&gpslimit=50"
     
-    let session = URLSession.shared
     
-    // dont need to unwrap url anymore?
+    
+    
+    guard let url = URL(string: urlString) else { return }
+    
     // maybe use urlRequest?
     
-    let task = session.dataTask(with: url) { (data, response, error) in
-      
-                  print("inside dataTask")
-                  print("response is \(response)")
-      //
-      //
-                  print("data is \(data)")
-                  print(error?.localizedDescription)
+    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
       
       guard let data = data else { return }
       
       if let returnJson = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] {
-        
-        print("inside json serialization")
-        
         if let returnJson = returnJson {
-            print("completion returnJson")
           completion(returnJson)
-          
         }
       }
     }
@@ -55,26 +50,13 @@ class WikiAPIClient {
 
 }
 
-
-//extension WikiAPIClient {
+//extension WikiAPIClient: TextCaptureDelegate {
 //  
-//  func downloadImage(at url: URL, completion: @escaping(UIImage?) -> Void) {
-//    
-//    let session = URLSession.shared
-//    let request = URLRequest(url: url)
-//    
-//    
-//    session.dataTask(with: request) { (data, response, error) in
-//      DispatchQueue.main.async {
-//        guard let rawData = data,
-//              let image = UIImage(data: rawData)
-//          else {completion(nil); return }
-//          completion(image)
-//      }
-//    }
-//    .resume()
+//  func textCapture(_ text: String) {
+//    capturedText = text
 //  }
 //}
+
 
 
 

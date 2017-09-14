@@ -22,16 +22,14 @@ class WikiPage {
   // do I really need all this?
   
   init(page: (String, Any)) {
-    
-    
     pageValues = page.1 as? [String: Any]
     pageId = pageValues["pageid"] as? Int
     pageTitle = pageValues["title"] as? String
     
     if let thumbnail = pageValues["thumbnail"] as? [String: Any] {
       source = thumbnail["source"] as? String
-      let url = URL(fileURLWithPath: source)
-      let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+      let url = URL(string: source)
+      let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
         guard let data = data else { return }
         DispatchQueue.main.async {
           self.image = UIImage(data: data)
@@ -39,7 +37,7 @@ class WikiPage {
       }
       task.resume()
     } else {
-      print("no thumbnail")
+      image = UIImage(named: "Gooroo Logo.png")
     }
   }
 }

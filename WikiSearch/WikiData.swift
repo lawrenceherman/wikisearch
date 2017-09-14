@@ -13,13 +13,19 @@ class WikiData {
   
   static let sharedInstance = WikiData()
   
+  var textCapture = ""
+  
   var pagesArray: [WikiPage] = []
   
   // do i need completion handler?
   
   func getItemsFromAPI(_ completion: @escaping () -> ()) {
     
-    WikiAPIClient.getPages { returnJson in
+    print(textCapture)
+    
+
+    
+    WikiAPIClient.getPages(text: textCapture) { returnJson in
       
       self.pagesArray.removeAll()
       let query = returnJson["query"] as? [String: Any]
@@ -29,7 +35,7 @@ class WikiData {
       
       for p in pages! {
         
-        print("in pages loop")
+//        print("in pages loop")
         
          let item = WikiPage(page: p)
         self.pagesArray.append(item)
@@ -37,6 +43,8 @@ class WikiData {
         
      
       }
+      
+      completion()
     }
   }
 }
