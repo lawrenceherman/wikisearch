@@ -13,38 +13,37 @@ class WikiData {
   
   static let sharedInstance = WikiData()
   
-  var textCapture = ""
+  var textCapture = "gooroo"
   
   var pagesArray: [WikiPage] = []
   
   // do i need completion handler?
   
-  func getItemsFromAPI(_ completion: @escaping () -> ()) {
+  func getItemsFromAPI(completion: @escaping () -> ()) {
+    //  func getItemsFromAPI() {
     
     print(textCapture)
-    
-
     
     WikiAPIClient.getPages(text: textCapture) { returnJson in
       
       self.pagesArray.removeAll()
-      let query = returnJson["query"] as? [String: Any]
-      let pages = query?["pages"] as? [String: Any]
       
-      // better way to deal with optional?
-      
-      for p in pages! {
+      var i = 1
+      guard let query = returnJson["query"] as? [String: Any] else { return }
+      guard let pages = query["pages"] as? [String: Any] else { return }
+
+      for p in pages {
+        //        print("in pages loop")
         
-//        print("in pages loop")
-        
-         let item = WikiPage(page: p)
+        let item = WikiPage(page: p)
         self.pagesArray.append(item)
-    
-        
-     
+        print("pagescount' \(i)")
+
+        i += 1
       }
-      
+
       completion()
+      
     }
   }
 }

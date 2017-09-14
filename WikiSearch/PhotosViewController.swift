@@ -17,96 +17,71 @@ class PhotosViewController: UICollectionViewController {
   
   let data = WikiData.sharedInstance
   let reuseIdentifier = "WikiCell"
-  //    let sectionInserts = UIEdgeInsetsMake(50.0, 20.0, 50.0, 20.0)
+  var selectedImage = 0
   
-//  weak var textDelegate: TextCaptureDelegate?
+
+  
+  @IBOutlet weak var searchField: UITextField!
+  
+  
+  @IBAction func textFieldChanged(_ sender: UITextField) {
+ 
+  print("textField changed")
+    data.textCapture = sender.text!
+    data.getItemsFromAPI(completion: reload)
+
+  
+  
+  }
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
   
-
+    data.getItemsFromAPI(completion: reload)
+    searchField.becomeFirstResponder()
+}
+  
+  override func viewDidAppear(_ animated: Bool) {
+//   reload()
     
- 
-    
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = false
-    
-    // Register cell classes
-//    self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-    
-    // Do any additional setup after loading the view.
   }
-  
-  @IBAction func editingChanged(_ sender: UITextField) {
-  
-    data.textCapture = sender.text!
-    
-    data.getItemsFromAPI {
-      
+//
+  func reload() {
+    print("reload data called")
+    DispatchQueue.main.async {
+      self.collectionView?.reloadData()
 
-      
-      
     }
-    
-    collectionView?.reloadData()
-    
-    
-    
-  
   }
+
+
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using [segue destinationViewController].
-   // Pass the selected object to the new view controller.
-   }
-   */
+  @objc func dismissKeyboard() {
+    print("tapped")
+    searchField.resignFirstResponder()
+  }
   
-  // MARK: UICollectionViewDataSource
+  override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+//
+//    let photoDetail = storyboard?.instantiateViewController(withIdentifier: "WikiPhotoDetail") as! WikiPhotoDetail
+//
+//    photoDetail.image.image = data.pagesArray[indexPath.row].image
+//
+//    photoDetail.transitioningDelegate = self
+//    present(photoDetail, animated: true, completion: nil)
+//
   
   
-  
-  // MARK: UICollectionViewDelegate
-  
-  /*
-   // Uncomment this method to specify if the specified item should be highlighted during tracking
-   override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-   return true
-   }
-   */
-  
-  /*
-   // Uncomment this method to specify if the specified item should be selected
-   override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-   return true
-   }
-   */
-  
-  /*
-   // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-   override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-   return false
-   }
-   
-   override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-   return false
-   }
-   
-   override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-   
-   }
-   */
+  }
+
+
   
 }
 
@@ -120,23 +95,40 @@ extension PhotosViewController {
     return 1
   }
   
-  
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    // #warning Incomplete implementation, return the number of items
-    print("inside collectionView \(data.pagesArray.count)")
-
+//    return data.pagesArray.count
     return data.pagesArray.count
   }
   
+  
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WikiPhotoCell
+    
 
+//    print("indexpath.row \(indexPath.row)")
+//    print("data array count \(data.pagesArray.count)")
+    
+    
     let image = data.pagesArray[indexPath.row].image
     cell.imageView.image = image
-    
     return cell
   }
   
 }
+
+extension PhotosViewController: UIViewControllerTransitioningDelegate {
+  
+  
+  
+  
+  
+
+
+}
+
+
+
+
 
 

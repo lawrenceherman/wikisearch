@@ -13,6 +13,8 @@ class WikiPhotoCell: UICollectionViewCell {
 
   @IBOutlet weak var imageView: UIImageView!
   
+  
+  
 
 
 

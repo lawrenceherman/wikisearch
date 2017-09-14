@@ -17,7 +17,7 @@ class WikiPage {
   var pageTitle: String!
   var thumbnail: [String: Any]?
   var source: String!
-  var image: UIImage!
+  var image: UIImage?
   
   // do I really need all this?
   
@@ -29,25 +29,47 @@ class WikiPage {
     if let thumbnail = pageValues["thumbnail"] as? [String: Any] {
       source = thumbnail["source"] as? String
       let url = URL(string: source)
-      let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
-        guard let data = data else { return }
-        DispatchQueue.main.async {
-          self.image = UIImage(data: data)
-        }
+      
+//      let serialQueue = DispatchQueue(label: "test")
+//      serialQueue.async {
+      
+        let task = URLSession.shared.dataTask(with: url!) { (data, response, error) in
+          guard let data = data else { return }
+          
+          if Thread.isMainThread{
+            print("task running in main thread")
+          } else {
+            print("task running in background thread")
+          }
+          
+          DispatchQueue.main.async {
+            self.image = UIImage(data: data)
+            print("completed image load")
+          }
+          
       }
+      
       task.resume()
-    } else {
+
+      
+    }
+    else {
       image = UIImage(named: "Gooroo Logo.png")
     }
+  
+  
+  
+  
   }
 }
 
-  
-  
-  
-  
-  
-  //  func downloadImage(source: String) {
+
+//        DispatchQueue.main.async {
+//        }
+
+
+
+//  func downloadImage(source: String) {
 //    guard let url = URL(string: source) else { return }
 //  // is donwloading?
 //
@@ -87,14 +109,14 @@ class WikiPage {
 //  }
 //
 
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
 
 
 //
