@@ -7,13 +7,8 @@
 //
 
 import UIKit
+import AVfoundation
 import Kingfisher
-
-
-//protocol TextCaptureDelegate: class {
-//  func textCapture(_ text: String)
-//}
-
 
 class PhotosViewController: UICollectionViewController {
   
@@ -26,54 +21,35 @@ class PhotosViewController: UICollectionViewController {
   
   @IBAction func textFieldChanged(_ sender: UITextField) {
     
-    
     self.data.pagesArray = []
-  
-
     
-    print("textField changed")
     if sender.text! != "" {
       reload()
       data.textCapture = sender.text!
       data.getItemsFromAPI(completion: reload)
-
-    } else  {
+      } else  {
       collectionView?.reloadData()
     }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
-//    data.getItemsFromAPI(completion: reload)
     searchField.becomeFirstResponder()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     searchField.becomeFirstResponder()
   }
-
+  
   func reload() {
-    print("reload data called")
-    
     DispatchQueue.main.async {
-//      self.collectionView?.setNeedsLayout()
-//      self.reload()
-
       self.collectionView?.reloadData()
-      
-    }
+      }
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
   }
-  
-//  @objc func dismissKeyboard() {
-//    print("tapped")
-//    searchField.resignFirstResponder()
-//  }
   
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
@@ -81,23 +57,15 @@ class PhotosViewController: UICollectionViewController {
     
     if let urlString = data.pagesArray[indexPath.row].sourceURL {
       print(urlString)
-      if let url = URL(string: "urlString") {
-        
-//        let image = selectedImage?.kf.setImage(with: url)
-        photoDetail.imageView.kf.setImage(with: url)
-        
-        //        photoDetail.imageView
-        
-        //        photoDetail.imageView.kf.setImage(with: url)
-      }
+      photoDetail.sourceURl = urlString
     }
-
+    
     photoDetail.transitioningDelegate = self
     present(photoDetail, animated: true, completion: nil)
-    
-    }
+  }
 }
-  
+
+// data sources
 extension PhotosViewController {
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -112,18 +80,16 @@ extension PhotosViewController {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WikiPhotoCell
     
-    print("indexpath.row \(indexPath.row)")
-    print("data array count \(data.pagesArray.count)")
-    
     if let urlString = data.pagesArray[indexPath.row].sourceURL {
+      // send url to WikiPhotoDetail for loading
       let url = URL(string: urlString)
       cell.imageView.kf.setImage(with: url)
     }
-    
     return cell
   }
 }
 
+// view controller animation functions
 extension PhotosViewController: UIViewControllerTransitioningDelegate {
   
   func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
@@ -134,6 +100,26 @@ extension PhotosViewController: UIViewControllerTransitioningDelegate {
     transition.presenting = false
     return transition
   }
+}
+
+extension PhotosViewController {
+  
+  
+  func loadSounds () {
+    
+    
+    
+    
+    
+    
+    
+  }
+  
+  
+  
+  
+  
+  
 }
 
 

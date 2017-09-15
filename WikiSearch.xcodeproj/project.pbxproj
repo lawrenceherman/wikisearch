@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4204F7CE0F5EE40F71A17706 /* Pods_WikiSearch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0743380A9A4305913BC48FF0 /* Pods_WikiSearch.framework */; };
+		FE541F561F6C164000F67185 /* WHOOSH_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE541F521F6C164000F67185 /* WHOOSH_2.mp3 */; };
+		FE541F571F6C164000F67185 /* WHOOSH_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE541F531F6C164000F67185 /* WHOOSH_1.mp3 */; };
+		FE541F581F6C164000F67185 /* WHOOSH_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE541F541F6C164000F67185 /* WHOOSH_4.mp3 */; };
+		FE541F591F6C164000F67185 /* WHOOSH_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FE541F551F6C164000F67185 /* WHOOSH_3.mp3 */; };
 		FE75397E1F6B094400EC5547 /* WikiPhotoDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE75397D1F6B094400EC5547 /* WikiPhotoDetail.swift */; };
 		FE7539801F6B0B1700EC5547 /* FadeAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE75397F1F6B0B1700EC5547 /* FadeAnimator.swift */; };
 		FE77BB1E1F6985F4002EB6AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE77BB1D1F6985F4002EB6AF /* AppDelegate.swift */; };
@@ -26,6 +30,10 @@
 		0743380A9A4305913BC48FF0 /* Pods_WikiSearch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WikiSearch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08E3A064883CF888E82D8B4D /* Pods-WikiSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-WikiSearch/Pods-WikiSearch.release.xcconfig"; sourceTree = "<group>"; };
 		CB94D4D71FCBBBA4EC32AF2B /* Pods-WikiSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WikiSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WikiSearch/Pods-WikiSearch.debug.xcconfig"; sourceTree = "<group>"; };
+		FE541F521F6C164000F67185 /* WHOOSH_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WHOOSH_2.mp3; sourceTree = "<group>"; };
+		FE541F531F6C164000F67185 /* WHOOSH_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WHOOSH_1.mp3; sourceTree = "<group>"; };
+		FE541F541F6C164000F67185 /* WHOOSH_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WHOOSH_4.mp3; sourceTree = "<group>"; };
+		FE541F551F6C164000F67185 /* WHOOSH_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = WHOOSH_3.mp3; sourceTree = "<group>"; };
 		FE75397D1F6B094400EC5547 /* WikiPhotoDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiPhotoDetail.swift; sourceTree = "<group>"; };
 		FE75397F1F6B0B1700EC5547 /* FadeAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeAnimator.swift; sourceTree = "<group>"; };
 		FE77BB1A1F6985F4002EB6AF /* WikiSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +79,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		FE541F511F6C160900F67185 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				FE541F531F6C164000F67185 /* WHOOSH_1.mp3 */,
+				FE541F521F6C164000F67185 /* WHOOSH_2.mp3 */,
+				FE541F551F6C164000F67185 /* WHOOSH_3.mp3 */,
+				FE541F541F6C164000F67185 /* WHOOSH_4.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		FE77BB111F6985F4002EB6AF = {
 			isa = PBXGroup;
 			children = (
@@ -92,19 +111,20 @@
 		FE77BB1C1F6985F4002EB6AF /* WikiSearch */ = {
 			isa = PBXGroup;
 			children = (
-				FED977A61F69E0D100F9BE29 /* Gooroo Logo.png */,
+				FE541F511F6C160900F67185 /* Sounds */,
 				FED977A31F69B21500F9BE29 /* PhotosViewController.swift */,
 				FE77BB1D1F6985F4002EB6AF /* AppDelegate.swift */,
 				FE77BB321F698ECD002EB6AF /* WikiData.swift */,
 				FE77BB341F699053002EB6AF /* WikiAPIClient.swift */,
+				FED977A81F69F3E400F9BE29 /* WikiPhotoCell.swift */,
+				FE75397D1F6B094400EC5547 /* WikiPhotoDetail.swift */,
+				FE75397F1F6B0B1700EC5547 /* FadeAnimator.swift */,
 				FE77BB2F1F698DED002EB6AF /* Model */,
 				FE77BB211F6985F4002EB6AF /* Main.storyboard */,
 				FE77BB241F6985F4002EB6AF /* Assets.xcassets */,
 				FE77BB291F6985F4002EB6AF /* Info.plist */,
 				FE77BB261F6985F4002EB6AF /* LaunchScreen.storyboard */,
-				FED977A81F69F3E400F9BE29 /* WikiPhotoCell.swift */,
-				FE75397D1F6B094400EC5547 /* WikiPhotoDetail.swift */,
-				FE75397F1F6B0B1700EC5547 /* FadeAnimator.swift */,
+				FED977A61F69E0D100F9BE29 /* Gooroo Logo.png */,
 			);
 			path = WikiSearch;
 			sourceTree = "<group>";
@@ -179,8 +199,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE541F571F6C164000F67185 /* WHOOSH_1.mp3 in Resources */,
 				FED977A71F69E0D100F9BE29 /* Gooroo Logo.png in Resources */,
+				FE541F561F6C164000F67185 /* WHOOSH_2.mp3 in Resources */,
 				FE77BB281F6985F4002EB6AF /* LaunchScreen.storyboard in Resources */,
+				FE541F591F6C164000F67185 /* WHOOSH_3.mp3 in Resources */,
+				FE541F581F6C164000F67185 /* WHOOSH_4.mp3 in Resources */,
 				FE77BB251F6985F4002EB6AF /* Assets.xcassets in Resources */,
 				FE77BB231F6985F4002EB6AF /* Main.storyboard in Resources */,
 			);

@@ -16,27 +16,22 @@ class WikiData {
   
   func getItemsFromAPI(completion: @escaping () -> ()) {
     
+    // send text to APIClient to build url String
     WikiAPIClient.getPages(text: textCapture) { returnJson in
-      
       self.pagesArray.removeAll()
       
-      var i = 1
       guard let query = returnJson["query"] as? [String: Any] else { return }
       guard let pages = query["pages"] as? [String: Any] else { return }
 
+      // loop through pages. Instatiating if the have sourceUrl
       for p in pages {
-        //        print("in pages loop")
-        
         let item = WikiPage(page: p)
         if item.sourceURL != nil {
           self.pagesArray.append(item)
-          print("pagescount' \(i)")
-        
         }
-        
-        i += 1
       }
-
+      
+      // after insatiating all Pages reload()
       completion()
     }
   }

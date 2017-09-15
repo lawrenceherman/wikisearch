@@ -8,12 +8,29 @@
 
 import Foundation
 import UIKit
+import Kingfisher
 
 
 class WikiPhotoDetail: UIViewController {
   
   
   @IBOutlet weak var imageView: UIImageView!
+  
+  var sourceURl = ""
+  
+  override func viewDidLoad() {
+    
+    if let url = URL(string: sourceURl) {
+      
+      imageView.kf.setImage(with: url)
+      
+    }
+    
+    
+    
+    
+    
+  }
   
   
   override func viewWillAppear(_ animated: Bool) {

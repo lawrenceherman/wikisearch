@@ -17,7 +17,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="QvH-ro-lEw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.052267608559999998" green="0.50734377070000003" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.12865639940000001" green="0.78188063289999998" blue="0.83409343270000003" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="5" minimumInteritemSpacing="5" id="nUL-nH-R4t">
                             <size key="itemSize" width="125" height="125"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -32,7 +32,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gooroo Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="hNI-xo-Dk1">
+                                        <imageView contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hNI-xo-Dk1">
                                             <rect key="frame" x="0.0" y="0.0" width="96" height="96"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </imageView>
@@ -88,15 +88,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RPw-T8-5LD">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.12865639940000001" green="0.78188063289999998" blue="0.83409343270000003" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="RPw-T8-5LD" firstAttribute="leading" secondItem="i4J-VT-gqJ" secondAttribute="leading" id="D3O-Z6-g1n"/>
-                            <constraint firstItem="RPw-T8-5LD" firstAttribute="top" secondItem="ezg-kw-Ax6" secondAttribute="top" id="Eog-zM-XeA"/>
-                            <constraint firstItem="RPw-T8-5LD" firstAttribute="trailing" secondItem="i4J-VT-gqJ" secondAttribute="trailing" id="YIh-Yn-c5i"/>
-                            <constraint firstItem="RPw-T8-5LD" firstAttribute="bottom" secondItem="i4J-VT-gqJ" secondAttribute="bottom" id="zWs-w1-IEl"/>
+                            <constraint firstItem="RPw-T8-5LD" firstAttribute="leading" secondItem="i4J-VT-gqJ" secondAttribute="leading" id="3eW-44-fkH"/>
+                            <constraint firstItem="RPw-T8-5LD" firstAttribute="top" secondItem="i4J-VT-gqJ" secondAttribute="top" constant="126" id="DWM-Q2-LWq"/>
+                            <constraint firstItem="i4J-VT-gqJ" firstAttribute="bottom" secondItem="RPw-T8-5LD" secondAttribute="bottom" constant="146" id="JfE-FT-4zc"/>
+                            <constraint firstItem="RPw-T8-5LD" firstAttribute="trailing" secondItem="i4J-VT-gqJ" secondAttribute="trailing" id="pdJ-Uz-DEl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="i4J-VT-gqJ"/>
                     </view>
@@ -127,7 +127,4 @@
             <point key="canvasLocation" x="-265" y="126"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Gooroo Logo.png" width="300" height="86"/>
-    </resources>
 </document>
