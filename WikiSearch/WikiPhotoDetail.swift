@@ -13,7 +13,8 @@ import UIKit
 class WikiPhotoDetail: UIViewController {
   
   
-  @IBOutlet weak var image: UIImageView!
+  @IBOutlet weak var imageView: UIImageView!
+  
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)

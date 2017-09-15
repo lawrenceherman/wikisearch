@@ -20,32 +20,46 @@ class PhotosViewController: UICollectionViewController {
   let data = WikiData.sharedInstance
   let reuseIdentifier = "WikiCell"
   let transition = FadeAnimator()
+  let selectedImage: UIImageView? = nil
   
   @IBOutlet weak var searchField: UITextField!
   
   @IBAction func textFieldChanged(_ sender: UITextField) {
+    
+    
     self.data.pagesArray = []
+  
 
+    
     print("textField changed")
-    data.textCapture = sender.text!
-    data.getItemsFromAPI(completion: reload)
+    if sender.text! != "" {
+      reload()
+      data.textCapture = sender.text!
+      data.getItemsFromAPI(completion: reload)
+
+    } else  {
+      collectionView?.reloadData()
+    }
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    data.getItemsFromAPI(completion: reload)
+//    data.getItemsFromAPI(completion: reload)
     searchField.becomeFirstResponder()
   }
   
   override func viewDidAppear(_ animated: Bool) {
+    searchField.becomeFirstResponder()
   }
 
   func reload() {
     print("reload data called")
     
     DispatchQueue.main.async {
-      self.collectionView?.setNeedsLayout()
+//      self.collectionView?.setNeedsLayout()
+//      self.reload()
+
       self.collectionView?.reloadData()
       
     }
@@ -56,18 +70,26 @@ class PhotosViewController: UICollectionViewController {
     // Dispose of any resources that can be recreated.
   }
   
-  @objc func dismissKeyboard() {
-    print("tapped")
-    searchField.resignFirstResponder()
-  }
+//  @objc func dismissKeyboard() {
+//    print("tapped")
+//    searchField.resignFirstResponder()
+//  }
   
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
     let photoDetail = storyboard?.instantiateViewController(withIdentifier: "WikiPhotoDetail") as! WikiPhotoDetail
     
     if let urlString = data.pagesArray[indexPath.row].sourceURL {
-      let url = URL(string: "urlString")
-      photoDetail.image.kf.setImage(with: url)
+      print(urlString)
+      if let url = URL(string: "urlString") {
+        
+//        let image = selectedImage?.kf.setImage(with: url)
+        photoDetail.imageView.kf.setImage(with: url)
+        
+        //        photoDetail.imageView
+        
+        //        photoDetail.imageView.kf.setImage(with: url)
+      }
     }
 
     photoDetail.transitioningDelegate = self

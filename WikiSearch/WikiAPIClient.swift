@@ -13,10 +13,6 @@ class WikiAPIClient {
   
 class func getPages(text: String, with completion: @escaping ([String: Any]) -> ()) {
     
-    
-   print(text)
-    
-    print("inside wikiClient get pages")
   
     let urlString = "https://en.wikipedia.org/w/api.php?action=query&prop=pageimages&format=json&piprop=thumbnail&pithumbsize=96&pilimit=50&generator=prefixsearch&gpssearch=" + text + "&gpslimit=50"
     

@@ -11,9 +11,7 @@ import Foundation
 class WikiData {
   
   static let sharedInstance = WikiData()
-  
-  var textCapture = "tutor"
-  
+  var textCapture = ""
   var pagesArray: [WikiPage] = []
   
   func getItemsFromAPI(completion: @escaping () -> ()) {
