@@ -111,15 +111,15 @@
 		FE77BB1C1F6985F4002EB6AF /* WikiSearch */ = {
 			isa = PBXGroup;
 			children = (
-				FE541F511F6C160900F67185 /* Sounds */,
 				FED977A31F69B21500F9BE29 /* PhotosViewController.swift */,
-				FE77BB1D1F6985F4002EB6AF /* AppDelegate.swift */,
 				FE77BB321F698ECD002EB6AF /* WikiData.swift */,
 				FE77BB341F699053002EB6AF /* WikiAPIClient.swift */,
 				FED977A81F69F3E400F9BE29 /* WikiPhotoCell.swift */,
 				FE75397D1F6B094400EC5547 /* WikiPhotoDetail.swift */,
 				FE75397F1F6B0B1700EC5547 /* FadeAnimator.swift */,
+				FE77BB1D1F6985F4002EB6AF /* AppDelegate.swift */,
 				FE77BB2F1F698DED002EB6AF /* Model */,
+				FE541F511F6C160900F67185 /* Sounds */,
 				FE77BB211F6985F4002EB6AF /* Main.storyboard */,
 				FE77BB241F6985F4002EB6AF /* Assets.xcassets */,
 				FE77BB291F6985F4002EB6AF /* Info.plist */,

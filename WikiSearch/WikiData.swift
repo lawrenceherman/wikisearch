@@ -22,7 +22,7 @@ class WikiData {
       
       guard let query = returnJson["query"] as? [String: Any] else { return }
       guard let pages = query["pages"] as? [String: Any] else { return }
-
+      
       // loop through pages. Instatiating if the have sourceUrl
       for p in pages {
         let item = WikiPage(page: p)

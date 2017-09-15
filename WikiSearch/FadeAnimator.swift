@@ -8,9 +8,10 @@
 
 import UIKit
 
+// animation class for view controller transition
 class FadeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
 
-  let duration = 1.0
+  let duration = 2.0
   var presenting = true
   var originFrame = CGRect.zero
   

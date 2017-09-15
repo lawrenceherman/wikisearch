@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import AVfoundation
+import AVFoundation
 import Kingfisher
 
 class PhotosViewController: UICollectionViewController {
@@ -16,6 +16,7 @@ class PhotosViewController: UICollectionViewController {
   let reuseIdentifier = "WikiCell"
   let transition = FadeAnimator()
   let selectedImage: UIImageView? = nil
+  var whoosh: AVAudioPlayer!
   
   @IBOutlet weak var searchField: UITextField!
   
@@ -27,7 +28,7 @@ class PhotosViewController: UICollectionViewController {
       reload()
       data.textCapture = sender.text!
       data.getItemsFromAPI(completion: reload)
-      } else  {
+    } else  {
       collectionView?.reloadData()
     }
   }
@@ -35,6 +36,7 @@ class PhotosViewController: UICollectionViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     searchField.becomeFirstResponder()
+    loadSounds()
   }
   
   override func viewDidAppear(_ animated: Bool) {
@@ -44,14 +46,17 @@ class PhotosViewController: UICollectionViewController {
   func reload() {
     DispatchQueue.main.async {
       self.collectionView?.reloadData()
-      }
+    }
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
   
+  // cell tapped
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    whoosh.play()
     
     let photoDetail = storyboard?.instantiateViewController(withIdentifier: "WikiPhotoDetail") as! WikiPhotoDetail
     
@@ -102,24 +107,20 @@ extension PhotosViewController: UIViewControllerTransitioningDelegate {
   }
 }
 
+// the butter
 extension PhotosViewController {
-  
-  
   func loadSounds () {
     
+    let path = Bundle.main.path(forResource: "WHOOSH_3", ofType: "mp3")!
+    let url = URL(fileURLWithPath: path)
     
-    
-    
-    
-    
-    
+    do {
+      whoosh = try AVAudioPlayer(contentsOf: url)
+      print(whoosh.debugDescription)
+    } catch {
+      print("sound load error")
+    }
   }
-  
-  
-  
-  
-  
-  
 }
 
 
