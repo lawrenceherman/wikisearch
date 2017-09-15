@@ -17,10 +17,7 @@ class WikiPage {
   var pageTitle: String!
   var thumbnail: [String: Any]?
   var sourceURL: String?
-//  var imageView: UIImageView?
-  
-  // do I really need all this?
-  
+
   init(page: (String, Any)) {
     pageValues = page.1 as? [String: Any]
     pageId = pageValues["pageid"] as? Int

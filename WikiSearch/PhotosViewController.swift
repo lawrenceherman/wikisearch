@@ -19,23 +19,17 @@ class PhotosViewController: UICollectionViewController {
   
   let data = WikiData.sharedInstance
   let reuseIdentifier = "WikiCell"
-  var selectedImage = 0
-  
-  
+  let transition = FadeAnimator()
   
   @IBOutlet weak var searchField: UITextField!
   
-  
   @IBAction func textFieldChanged(_ sender: UITextField) {
-    
+    self.data.pagesArray = []
+
     print("textField changed")
     data.textCapture = sender.text!
     data.getItemsFromAPI(completion: reload)
-    
-    
-    
   }
-  
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -45,19 +39,17 @@ class PhotosViewController: UICollectionViewController {
   }
   
   override func viewDidAppear(_ animated: Bool) {
-    //   reload()
-    
   }
-  //
+
   func reload() {
     print("reload data called")
+    
     DispatchQueue.main.async {
+      self.collectionView?.setNeedsLayout()
       self.collectionView?.reloadData()
       
     }
   }
-  
-  
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
@@ -71,25 +63,19 @@ class PhotosViewController: UICollectionViewController {
   
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     
-    //
-    //    let photoDetail = storyboard?.instantiateViewController(withIdentifier: "WikiPhotoDetail") as! WikiPhotoDetail
-    //
-    //    photoDetail.image.image = data.pagesArray[indexPath.row].image
-    //
-    //    photoDetail.transitioningDelegate = self
-    //    present(photoDetail, animated: true, completion: nil)
-    //
+    let photoDetail = storyboard?.instantiateViewController(withIdentifier: "WikiPhotoDetail") as! WikiPhotoDetail
     
+    if let urlString = data.pagesArray[indexPath.row].sourceURL {
+      let url = URL(string: "urlString")
+      photoDetail.image.kf.setImage(with: url)
+    }
+
+    photoDetail.transitioningDelegate = self
+    present(photoDetail, animated: true, completion: nil)
     
-  }
-  
-  
-  
+    }
 }
-
-
-
-//Mark: - DataSource
+  
 extension PhotosViewController {
   
   override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -100,36 +86,32 @@ extension PhotosViewController {
     return data.pagesArray.count
   }
   
-  
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! WikiPhotoCell
     
-    
     print("indexpath.row \(indexPath.row)")
     print("data array count \(data.pagesArray.count)")
     
-    
     if let urlString = data.pagesArray[indexPath.row].sourceURL {
-      
       let url = URL(string: urlString)
       cell.imageView.kf.setImage(with: url)
     }
     
     return cell
-    
   }
-  
 }
 
 extension PhotosViewController: UIViewControllerTransitioningDelegate {
   
+  func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    return transition
+  }
   
-  
-  
-  
-  
-  
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    transition.presenting = false
+    return transition
+  }
 }
 
 

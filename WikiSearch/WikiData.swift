@@ -8,21 +8,15 @@
 
 import Foundation
 
-
 class WikiData {
   
   static let sharedInstance = WikiData()
   
-  var textCapture = "gooroo"
+  var textCapture = "tutor"
   
   var pagesArray: [WikiPage] = []
   
-  // do i need completion handler?
-  
   func getItemsFromAPI(completion: @escaping () -> ()) {
-    //  func getItemsFromAPI() {
-    
-    print(textCapture)
     
     WikiAPIClient.getPages(text: textCapture) { returnJson in
       
@@ -42,13 +36,10 @@ class WikiData {
         
         }
         
-     
-
         i += 1
       }
 
       completion()
-      
     }
   }
 }

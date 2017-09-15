@@ -38,7 +38,6 @@ class func getPages(text: String, with completion: @escaping ([String: Any]) -> 
     }
     task.resume()
   }
-
 }
 
 
